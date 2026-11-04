@@ -173,6 +173,11 @@ a.c:hover{border-color:var(--c);box-shadow:0 0 0 1px var(--c),0 10px 30px -12px 
 .name .play{color:var(--bg);font-size:12px;line-height:1.4}
 footer{margin-top:64px}
 @media (max-width:860px){.card-hero{grid-template-columns:minmax(0,1fr)}.card-hero .el{min-height:300px}}
+.pls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.pl{display:flex;flex-direction:column;gap:8px;min-width:0;color:var(--fg);font-size:14px;font-weight:700}
+.pl img{display:block;width:100%;height:auto;border-radius:4px;transition:transform .2s ease}
+.pl:hover img{transform:translateY(-3px)}
+@media (max-width:860px){.pls{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style>
 </head>
 <body>
@@ -193,9 +198,21 @@ footer{margin-top:64px}
     <span class="eyebrow" data-en="Element 01 · Music">Elemento 01 · Music</span>
     <h1>Henzner Sound Node</h1>
     <p class="lead">Independent Music Label</p>
+    <div class="links">
+      <a href="https://open.spotify.com/user/31rw7j2stbm5u2jxdf5g6ppq2uuq" target="_blank" rel="noopener">Spotify</a>
+    </div>
     
     
   </div>
+</div></section>
+
+<section class="wrap"><div class="inner group">Playlist</div><div class="inner pls">
+  <a class="pl" href="https://open.spotify.com/playlist/7opkGq7vjaR0wxEVuUU5zU" target="_blank" rel="noopener"><img src="playlist/lf-lo-fi.jpg" alt="" width="600" height="600" loading="lazy"><span>Pure Lofi</span></a>
+  <a class="pl" href="https://open.spotify.com/playlist/3ypTLujOX0Y6K1TeLLzUnR" target="_blank" rel="noopener"><img src="playlist/jz-jazz.jpg" alt="" width="600" height="600" loading="lazy"><span>Pure Jazz</span></a>
+  <a class="pl" href="https://open.spotify.com/playlist/53oi9oCvd6Imw6yZ1e261s" target="_blank" rel="noopener"><img src="playlist/hs-house.jpg" alt="" width="600" height="600" loading="lazy"><span>Pure House</span></a>
+  <a class="pl" href="https://open.spotify.com/playlist/5DxfiaQ81cTlFULavQxRfO" target="_blank" rel="noopener"><img src="playlist/h2k-house-anni-00.jpg" alt="" width="600" height="600" loading="lazy"><span>Pure House 2000s</span></a>
+  <a class="pl" href="https://open.spotify.com/playlist/1MklcWbkjIs9EM94cl7lA6" target="_blank" rel="noopener"><img src="playlist/it-successi-italiani.jpg" alt="" width="600" height="600" loading="lazy"><span>Successi Italiani</span></a>
+  <a class="pl" href="https://open.spotify.com/playlist/35IcdqjjwQ3IQDfs7tDhFb" target="_blank" rel="noopener"><img src="playlist/tm-tormentoni-anni-90.jpg" alt="" width="600" height="600" loading="lazy"><span>Tormentoni Anni 90</span></a>
 </div></section>
 
 <section class="wrap"><div class="inner group" data-en="Releases">Uscite</div><div class="inner table">
@@ -203,7 +220,7 @@ footer{margin-top:64px}
 </div></section>
 
 <footer class="wrap" id="contatti"><div class="inner contacts">
-  <div class="c music soon"><strong>H<b>sn</b></strong><span data-en="Coming soon">In arrivo</span></div>
+  <a class="c music" href="https://open.spotify.com/user/31rw7j2stbm5u2jxdf5g6ppq2uuq" target="_blank" rel="noopener"><strong>S<b>p</b></strong><span>Spotify</span></a>
   <div class="trio">
     <a class="c files" href="https://www.youtube.com/@HenznerFiles" target="_blank" rel="noopener"><strong>Y<b>t</b></strong><span>YouTube</span></a>
     <a class="c files" href="https://www.instagram.com/henznerfiles/" target="_blank" rel="noopener"><strong>I<b>g</b></strong><span>Instagram</span></a>
