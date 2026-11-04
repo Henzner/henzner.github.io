@@ -1,0 +1,35 @@
+name: Aggiorna contenuti da YouTube
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+jobs:
+  aggiorna:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Leggi YouTube e aggiorna le pagine
+        run: python .github/aggiorna.py
+      - name: Pubblica se qualcosa è cambiato
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet; then
+            echo "Nessuna novità"
+            exit 0
+          fi
+          git config user.name "Henzner"
+          git config user.email "Henzner@users.noreply.github.com"
+          git add index.html files.html games.html
+          git commit -m "Aggiorna contenuti da YouTube"
+          git push
+          gh api -X POST "repos/${{ github.repository }}/pages/builds" || true

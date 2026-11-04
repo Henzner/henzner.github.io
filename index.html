@@ -107,7 +107,7 @@ h1{margin:0;font-size:clamp(40px,7vw,80px);font-weight:700;line-height:1;letter-
 .three .name{flex:1}
 .three .name strong{font-size:18px}
 .three .name span{font-size:14px;line-height:1.45}
-.note{position:relative;z-index:1;font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--c);line-height:1.4}
+.note{position:relative;z-index:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-height:15px;font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--c);line-height:1.4}
 .minis{position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:minmax(0,1fr);gap:6px;height:96px}
 .minis img{display:block;width:100%;height:100%;object-fit:cover;border-radius:6px;min-width:0}
 .wave{position:relative;z-index:1;display:block;width:100%;height:96px}
@@ -177,14 +177,20 @@ a.c:hover{border-color:var(--c);box-shadow:0 0 0 1px var(--c),0 10px 30px -12px 
     <div class="top"><span class="num">02</span><span class="grp">YouTube</span></div>
     <div class="sym">H<b>f</b></div>
     <div class="name"><strong>Henzner Files</strong><span data-en="Henzner Files is an archive of true stories.<br>Every video is a case file: a person who lost everything, fell, and got back up. Sometimes they won, sometimes they didn't. What matters to us is how they tried.">Henzner Files è un archivio di storie vere.<br>Ogni video è un fascicolo: una persona che ha perso tutto, è caduta, e si è rialzata. A volte ha vinto, a volte no. A noi interessa come ci ha provato.</span></div>
+<!-- auto:files-anteprime -->
     <div class="minis"><img src="https://i.ytimg.com/vi/1WUz2cd__Fc/maxresdefault.jpg" alt="" loading="lazy"><img src="https://i.ytimg.com/vi/RX_Vhz7C1f8/oar2.jpg" alt="" loading="lazy"><img src="https://i.ytimg.com/vi/m_3kmk7v_6A/oar2.jpg" alt="" loading="lazy"></div>
-    <span class="note" data-en="Latest: She fell 3,000 metres">Ultimo: È caduta da 3.000 metri</span>
+<!-- /auto:files-anteprime -->
+<!-- auto:files-nota -->
+    <span class="note" data-en="Latest: È caduta da 3.000 metri legata a un sedile. Ed è viva.">Ultimo: È caduta da 3.000 metri legata a un sedile. Ed è viva.</span>
+<!-- /auto:files-nota -->
   </a>
   <a class="el games three" id="hg" href="games.html">
     <div class="top"><span class="num">03</span><span class="grp">Games</span></div>
     <div class="sym">H<b>g</b></div>
     <div class="name"><strong>Henzner Games</strong><span data-en="A game lab on Roblox. It all starts with Steal the Golden Ball.">Un laboratorio di giochi su Roblox. Si comincia con Steal the Golden Ball.</span></div>
-    <div class="minis"><img src="https://i.ytimg.com/vi/esL4jdsWYS8/maxresdefault.jpg" alt="" loading="lazy"><img src="https://i.ytimg.com/vi/oUZiNR94uck/oar2.jpg" alt="" loading="lazy"><img src="https://i.ytimg.com/vi/OZUUGfQHHvo/oar2.jpg" alt="" loading="lazy"></div>
+<!-- auto:games-anteprime -->
+    <div class="minis"><img src="https://i.ytimg.com/vi/esL4jdsWYS8/maxresdefault.jpg" alt="" loading="lazy"><img src="https://i.ytimg.com/vi/6-dw4d3A9aQ/oar2.jpg" alt="" loading="lazy"><img src="https://i.ytimg.com/vi/vJjlbnuFAXc/oar2.jpg" alt="" loading="lazy"></div>
+<!-- /auto:games-anteprime -->
     <span class="note" data-en="Play now on Roblox">Da giocare ora su Roblox</span>
   </a>
 </div></section>
