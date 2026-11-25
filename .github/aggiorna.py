@@ -19,6 +19,16 @@ LETTERS = "abcdefghijklmnopqrstuvwxyz"
 EXT = 'target="_blank" rel="noopener"'
 
 
+def label(n):
+    """0 -> a, 25 -> z, 26 -> aa, 27 -> ab... (non si ferma a 26)."""
+    s = ""
+    n += 1
+    while n:
+        n, r = divmod(n - 1, 26)
+        s = LETTERS[r] + s
+    return s
+
+
 def fetch(url):
     req = urllib.request.Request(url, headers={"User-Agent": "henzner-site"})
     return urllib.request.urlopen(req, timeout=20).read().decode("utf-8")
@@ -103,9 +113,9 @@ def main():
     games = load(GAMES_ID)
 
     # Henzner Files
-    f_video = [card("files", "YouTube", f"02.{LETTERS[n]}", it) for n, it in enumerate(files) if it["kind"] == "Video"]
-    f_short = [card("files", "YouTube", f"02.{LETTERS[n]}", it) for n, it in enumerate(files) if it["kind"] == "Short"]
-    nxt = f"02.{LETTERS[len(files)]}"
+    f_video = [card("files", "YouTube", f"02.{label(n)}", it) for n, it in enumerate(files) if it["kind"] == "Video"]
+    f_short = [card("files", "YouTube", f"02.{label(n)}", it) for n, it in enumerate(files) if it["kind"] == "Short"]
+    nxt = f"02.{label(len(files))}"
     f_short.append(f'<div class="el empty tall" data-en="{nxt} — NEXT STORY">{nxt} — PROSSIMA STORIA</div>')
 
     p = ROOT / "files.html"
@@ -116,8 +126,8 @@ def main():
     p.write_text(t, encoding="utf-8")
 
     # Henzner Games: 03.a è l'evento, il feed parte da 03.b
-    g_video = [card("games", "Games", f"03.{LETTERS[n + 1]}", it) for n, it in enumerate(games) if it["kind"] == "Video"]
-    g_short = [card("games", "Games", f"03.{LETTERS[n + 1]}", it) for n, it in enumerate(games) if it["kind"] == "Short"]
+    g_video = [card("games", "Games", f"03.{label(n + 1)}", it) for n, it in enumerate(games) if it["kind"] == "Video"]
+    g_short = [card("games", "Games", f"03.{label(n + 1)}", it) for n, it in enumerate(games) if it["kind"] == "Short"]
     p = ROOT / "games.html"
     t = p.read_text(encoding="utf-8")
     t = put(t, "conteggio", f'    <span class="count" data-en="1 game · {len(g_video)} video{"s" if len(g_video) != 1 else ""} · {len(g_short)} Shorts">1 gioco · {len(g_video)} video · {len(g_short)} Short</span>')
